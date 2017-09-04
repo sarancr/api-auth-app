@@ -83,7 +83,7 @@ There are 3 different APIs suggested
 
 ## Database Design
 Postgresql database is recommended to use on this project. The database name is 'authdb', and we shall use public schema, however, we could use private schema too.
-
+![alt text](https://github.com/sarancr/api-auth-app/blob/master/doc/db-design.JPG)
 ### Tables
 ### USER
 The purpose of this table is to store application user credentials. This table has four fields, and each field name and it's purpose is provided below
@@ -157,5 +157,25 @@ yarn start:dev
 ```
 By default, the port number 3000 is used, so load the URL http://localhost:3000/ on browser to make sure the application works!
 
+## Project Structure
+
+- bin/www.js : It contains HTTP Server creation code (Starting point of the application)
+- app.js
+    - Creates express app
+    - Using middleware to process json
+    - Use middleware security/guard.js to guard each request against user authentication
+    - Defines routing and mapping
+ - security/guard.js : 
+    - Defines rules to authorize the request or not
+    - Uses database tables to identify user roles and take appropriate action upon it
+ - routes/ : We shall defines route.js for each each feature. For example, order.js, pending.js, products.js. We can combine all these routes into one file. But it is nice to have them in individual file because the will helps easily locate based on the application feature.
+ - config/ : Contains application configuration files
+    - database.js - Database URL, Pooling configuration, login credentials
+    - db-init.sql - Database create script
+ - data/ : Contains sample data for API request, and response
+  - doc/ :  Contains project documents
+ - public/ : Contains view files to be server when the application URL is directly accessed on browser
+    
+    
 
 
