@@ -215,4 +215,4 @@ Body:
 
 ## Summary
 
-Able to successfully demonstrate how to implement a bais user authentication for an API on a node application using express, and PostgreSQL database.
+Able to successfully demonstrate how to implement a basic user authentication for an API on a node application using express, and PostgreSQL database.
