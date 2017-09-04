@@ -74,7 +74,7 @@ There are 3 different APIs suggested
  
  ### #3
  - API: /pending
- - Method: POST
+ - Method: PUT
  - Description : This API (Private API) is used by order admin to approve the order request, Authorization header is required.
  - HTTP Headers-  Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l
  - Content-Type: application/json
@@ -183,7 +183,36 @@ By default, the port number 3000 is used, so load the URL http://localhost:3000/
  - data/ : Contains sample data for API request, and response
   - doc/ :  Contains project documents
  - public/ : Contains view files to be server when the application URL is directly accessed on browser
-    
-    
 
+## Sample API Request
 
+### #1. Products API
+GET http://localhost:3000/products
+No authorization header required
+
+### #2. Order API
+POST http://localhost:3000/products
+Headers:
+Authorization : Basic ZGVtb3VzZXI6ZGVtbzEyMzQ=
+Content-Type : application/json
+Body:
+ [
+	{ "productId": 1983921, "qty":1},
+	{ "productId": 277352, "qty":3},
+	{ "productId": 8273872, "qty":10}
+ ]
+
+### #3. Pending API
+PUT http://localhost:3000/pending
+Headers:
+Authorization : Basic ZGVtb2FkbWluOmRlbW8xMjM0
+Content-Type : application/json
+Body:
+ {
+   "orderId": 121983721,
+   "status": "approved"
+ }
+
+## Summary
+
+Able to successfully demonstrate how to implement a bais user authentication for an API on a node application using express, and PostgreSQL database.
