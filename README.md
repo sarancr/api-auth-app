@@ -187,8 +187,10 @@ By default, the port number 3000 is used, so load the URL http://localhost:3000/
 ## Sample API Request
 
 ### #1. Products API
+```sh
 GET http://localhost:3000/products
 No authorization header required
+```
 
 ### #2. Order API
 ```sh
