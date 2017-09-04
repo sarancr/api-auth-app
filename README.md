@@ -191,6 +191,7 @@ GET http://localhost:3000/products
 No authorization header required
 
 ### #2. Order API
+```sh
 POST http://localhost:3000/products
 Headers:
 Authorization : Basic ZGVtb3VzZXI6ZGVtbzEyMzQ=
@@ -201,8 +202,10 @@ Body:
 	{ "productId": 277352, "qty":3},
 	{ "productId": 8273872, "qty":10}
  ]
+```
 
 ### #3. Pending API
+```sh
 PUT http://localhost:3000/pending
 Headers:
 Authorization : Basic ZGVtb2FkbWluOmRlbW8xMjM0
@@ -212,7 +215,7 @@ Body:
    "orderId": 121983721,
    "status": "approved"
  }
-
+```
 ## Summary
 
 Able to successfully demonstrate how to implement a basic user authentication for an API on a node application using express, and PostgreSQL database.
