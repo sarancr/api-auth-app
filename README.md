@@ -1,19 +1,20 @@
 # api-auth-app
 BASIC API Authentication on NodeJs Application
 
-##Objective
+## Objective
 Develop a simple User Authentication for an API in Node application. The API will consume JSON requests and respond with JSON output. The application should have 1 Public API that can be accessed anonymously, 1 Public API that can be accessed by any authenticated user and 1 Private API which can only be accessed with a certain permissions of a certain user. 
 
-##Design
+## API Design
 
 There are 3 different APIs suggested
 
- ###1
- API: /products
- Description : This API (public API) returns the list of products as JSON, Authorization header is not required, hence this API can be  accessed by anyone anonymously.
- Method: GET
- Request Data: None
- Response Data Example:
+ ### #1
+ - API: /products
+ - Description : This API (public API) returns the list of products as JSON, Authorization header is    not required, hence this API can be  accessed by anyone anonymously.
+ - Method: GET
+ - Request Data: None
+ - Response Data Example:
+```sh
  [
   {
 	productId: 1983921,
@@ -40,38 +41,42 @@ There are 3 different APIs suggested
 	price: 33.99
    }
  ]
- 
-  ###2
- API: /order
- Description : This API is used submit the order request by authenticated user, Authorization header is required.
- Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l
- Method: POST
- Content-Type: application/json
- Request Data Example: 
+```
+### #2
+ - API: /order
+ - Description : This API is used submit the order request by authenticated user, Authorization header is required.
+ - Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l
+ - Method: POST
+ - Content-Type: application/json
+ - Request Data Example: 
+ ```sh
  [
 	{ itemId: 1983921, qty:1},
 	{ itemId: 277352, qty:3},
 	{ itemId: 8273872, qty:10},
  ]
- 
- Response Data Example:
- {
+```
+ - Response Data Example:
+ ```sh
+{
 	orderId : WEB9881928198,
 	message : 'We have received your order, admin will review and approve the order for the shipment'
  }
+```
  
  
- ###3
- API: /pending
- Method: POST
- Description : This API (Private API) is used by order admin to approve the order request, Authorization header is required.
- Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l
- Content-Type: application/json
- Request Data Example:
- {
+ ### #3
+ - API: /pending
+ - Method: POST
+ - Description : This API (Private API) is used by order admin to approve the order request, Authorization header is required.
+ - Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l
+ - Content-Type: application/json
+ - Request Data Example:
+ ```sh {
    orderId: 121983721
    status: 'approved'
  }
+```
  
  
  
