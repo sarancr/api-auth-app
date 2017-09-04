@@ -157,7 +157,7 @@ yarn start:dev
 ```
 By default, the port number 3000 is used, so load the URL http://localhost:3000/ on browser to make sure the application works!
 
-### Project Structure
+## Project Structure
 
 - bin/www.js : It contains HTTP Server creation code (Starting point of the application)
 - app.js
