@@ -7,6 +7,10 @@ Develop a simple User Authentication for an API in Node application.
 ## Requirements
 The application should have 1 Public API that can be accessed anonymously, 1 Public API that can be accessed by any authenticated user and 1 Private API which can only be accessed with a certain permissions of a certain user. The API will consume JSON requests and respond with JSON output.
 
+## Arhchitecture
+
+![alt text](https://github.com/sarancr/api-auth-app/blob/master/doc/Architecture.png)
+
 ## API Design
 
 There are 3 different APIs suggested
@@ -80,6 +84,10 @@ There are 3 different APIs suggested
    status: 'approved'
  }
 ```
+
+## Security
+
+Each requested will be guarded by security. The security is implemented using BAIC authorization technique, hence, the each API request will come with Authorization header. The athorization header can be created by combining username:password with base64 encoding.
 
 ## Database Design
 Postgresql database is recommended to use on this project. The database name is 'authdb', and we shall use public schema, however, we could use private schema too.
