@@ -99,7 +99,21 @@ yarn
     - Login into postgresql server
      - Database, tables, sample data can be created by running the init-db.sql script which can be found under config directory in the project.
 
-### Running the application
+## Configure Database in the project
+- Inside project, open config/database.js file and provide the database server url, and credentials
+as like below
+```sh
+module.exports = {
+  database: "authdb", // name of the database
+  user: "postgres", // name of the user account
+  password: "demo1234", // password of the user account
+  port: 5432,
+  max: 10, // max number of clients in the pool
+  idleTimeoutMillis: 30000 // how long a client is allowed to remain idle before being closed
+};
+```
+
+## Running the application
 If you are using npm, then the application can be run by executing the below command
 ```sh
 npm start:dev
