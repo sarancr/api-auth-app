@@ -83,7 +83,7 @@ There are 3 different APIs suggested
 
 ## Database Design
 Postgresql database is recommended to use on this project. The database name is 'authdb', and we shall use public schema, however, we could use private schema too.
-
+![alt text](https://github.com/sarancr/api-auth-app/blob/master/doc/db-design.JPG)
 ### Tables
 ### USER
 The purpose of this table is to store application user credentials. This table has four fields, and each field name and it's purpose is provided below
