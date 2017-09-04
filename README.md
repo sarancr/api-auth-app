@@ -77,6 +77,26 @@ There are 3 different APIs suggested
    status: 'approved'
  }
 ```
- 
- 
- 
+## Installation
+
+This section describes the softwares required to set up and run this project.
+
+- Install NodeJs v6 from https://nodejs.org/en/download/
+- Either you can use npm which comes from nodeJs or you can yarn package manager
+- Download and install yarn from here - https://yarnpkg.com/en/docs/install
+- Clone this project from github
+- Go to project directory on command line
+- If you are using npm, then run the below command to fetch the project dependencies from npm
+ ```sh
+ npm install
+```
+- If you are using yarn, then run the below command to fetch the project dependencies from npm
+```sh
+yarn
+```
+- Install Database, download and install postgresql from https://www.postgresql.org/download
+
+- 
+
+
+
