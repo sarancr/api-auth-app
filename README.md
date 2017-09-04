@@ -1,4 +1,4 @@
-# API-auth-app
+# API Authentication
 BASIC API Authentication on NodeJs Application
 
 ## Objective
