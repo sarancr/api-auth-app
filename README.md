@@ -11,7 +11,7 @@ There are 3 different APIs suggested
  ### #1
  - API: /products
  - Description : This API (public API) returns the list of products as JSON, Authorization header is    not required, hence this API can be  accessed by anyone anonymously.
- - Method: GET
+ - HTTP Method: GET
  - Request Data: None
  - Response Data Example:
 ```sh
@@ -45,8 +45,8 @@ There are 3 different APIs suggested
 ### #2
  - API: /order
  - Description : This API is used submit the order request by authenticated user, Authorization header is required.
- - Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l
- - Method: POST
+ - HTTP Headers -   Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l
+ - HTTP Method: POST
  - Content-Type: application/json
  - Request Data Example: 
  ```sh
@@ -69,7 +69,7 @@ There are 3 different APIs suggested
  - API: /pending
  - Method: POST
  - Description : This API (Private API) is used by order admin to approve the order request, Authorization header is required.
- - Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l
+ - HTTP Headers-  Authorization: Basic QWxhZGRpbjpPcGVuU2VzYW1l
  - Content-Type: application/json
  - Request Data Example:
  ```sh {
@@ -77,6 +77,36 @@ There are 3 different APIs suggested
    status: 'approved'
  }
 ```
+
+## Database Design
+Postgresql database is recommended to use on this project. The database name is 'authdb', and we shall use public schema, however, we could use private schema too.
+
+### Tables
+### USER
+The purpose of this table is to store application user credentials. This table has four fields, and each field name and it's purpose is provided below
+
+    - ID - Type: SERIAL, It is auto increatment number field and primary key
+    - LOGIN_ID - TYPE:CHAR(256). It is user name field, a unique column and no NULL value allowed
+    - PASSWORD - TYPE: TEXT. It holds user password, it can have ecyrpted value, but for demo purpose, we shall simply store plan text, and no encryption needed.
+    - LAST_UPDATE - TIMESTAMP DEFAULT NOW() It is a TIMESTAMP field to trace when was the last update done on any row
+
+### PERMISSION
+
+The purpose of this table is to store differnt permission types. The example permission could be, 'general', 'admin', etc. This table has four fields, and each field name and it's purpose is provided below
+
+    - ID - Type: SERIAL, It is auto increatment number field and primary key
+    - name - TYPE:CHAR(128). It is a permission name column, a unique column and no NULL value allowed. 
+    - DESCRIPTION - TYPE: TEXT. It can have lengthy description about the purpose of this particular permission type.
+    - LAST_UPDATE - TIMESTAMP DEFAULT NOW() It is a TIMESTAMP field to trace when was the last update done on any row
+
+### USER_PERMISSION
+
+The purpose of this table is to store mapping between user and given permission to the user. This table has three fields, and each field name and it's purpose is provided below.
+
+    - USER_ID - Type: INTEGER, it references the ID field in USER table.
+    - PERMISSION_ID - TYPE:INTEGER. Iit references the ID field in PERMISSION table.
+    - LAST_UPDATE - TIMESTAMP DEFAULT NOW() It is a TIMESTAMP field to trace when was the last update done on any row
+    
 ## Installation
 
 This section describes the softwares required to set up and run this project on development environment.
