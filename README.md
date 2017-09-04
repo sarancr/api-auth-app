@@ -79,7 +79,7 @@ There are 3 different APIs suggested
 ```
 ## Installation
 
-This section describes the softwares required to set up and run this project.
+This section describes the softwares required to set up and run this project on development environment.
 
 - Install NodeJs v6 from https://nodejs.org/en/download/
 - Either you can use npm which comes from nodeJs or you can yarn package manager
@@ -94,9 +94,21 @@ This section describes the softwares required to set up and run this project.
 ```sh
 yarn
 ```
-- Install Database, download and install postgresql from https://www.postgresql.org/download
+ - ##### Database setup
+    - Install Database, download and install postgresql from https://www.postgresql.org/download
+    - Login into postgresql server
+     - Database, tables, sample data can be created by running the init-db.sql script which can be found under config directory in the project.
 
-- 
+### Running the application
+If you are using npm, then the application can be run by executing the below command
+```sh
+npm start:dev
+```
+If you are using yarn,  then the application can be run by executing the below command
+```sh
+yarn start:dev
+```
+By default, the port number 3000 is used, so load the URL http://localhost:3000/ on browser to make sure the application works!
 
 
 
