@@ -2,7 +2,10 @@
 BASIC API Authentication on NodeJs Application
 
 ## Objective
-Develop a simple User Authentication for an API in Node application. The API will consume JSON requests and respond with JSON output. The application should have 1 Public API that can be accessed anonymously, 1 Public API that can be accessed by any authenticated user and 1 Private API which can only be accessed with a certain permissions of a certain user. 
+Develop a simple User Authentication for an API in Node application.
+
+## Requirements
+The application should have 1 Public API that can be accessed anonymously, 1 Public API that can be accessed by any authenticated user and 1 Private API which can only be accessed with a certain permissions of a certain user. The API will consume JSON requests and respond with JSON output.
 
 ## API Design
 
