@@ -58,16 +58,16 @@ There are 3 different APIs suggested
  - Request Data Example: 
  ```sh
  [
-	{ itemId: 1983921, qty:1},
-	{ itemId: 277352, qty:3},
-	{ itemId: 8273872, qty:10},
+	{ "itemId": 1983921, "qty":1},
+	{ "itemId": 277352, "qty":3},
+	{ "itemId": 8273872, "qty":10},
  ]
 ```
  - Response Data Example:
  ```sh
 {
-	orderId : WEB9881928198,
-	message : 'We have received your order, admin will review and approve the order for the shipment'
+	"orderId" : "WEB9881928198",
+	"message" : "We have received your order, admin will review and approve the order for the shipment"
  }
 ```
  
@@ -80,14 +80,14 @@ There are 3 different APIs suggested
  - Content-Type: application/json
  - Request Data Example:
  ```sh {
-   orderId: 121983721
-   status: 'approved'
+   "orderId": 121983721
+   "status": "approved"
  }
 ```
 
 ## Security
 
-Each requested will be guarded by security. The security is implemented using BAIC authorization technique, hence, the each API request will come with Authorization header. The authorization header can be created by combining username:password with base64 encoding.
+Each request will be guarded by security. The security is implemented using BAIC authorization technique, hence, the each API request will come with Authorization header. The authorization header can be created by combining username:password with base64 encoding.
 
 ## Database Design
 Postgresql database is recommended to use on this project. The database name is 'authdb', and we shall use public schema, however, we could use private schema too.
@@ -194,7 +194,7 @@ No authorization header required
 
 ### #2. Order API
 ```sh
-POST http://localhost:3000/products
+POST http://localhost:3000/order
 Headers:
 Authorization : Basic ZGVtb3VzZXI6ZGVtbzEyMzQ=
 Content-Type : application/json
